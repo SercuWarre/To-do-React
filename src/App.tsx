@@ -1,12 +1,17 @@
-
+import 
 
 function App() {
-  
+ 
+
   return (
     <>
-    <h1>hello</h1>
-    
-    </>
+      <AppHeader />
+
+      <h1>TODO</h1>
+      
+      
+      <AppFooter />
+      </>
   )
 }
 
