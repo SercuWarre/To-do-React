@@ -6,13 +6,20 @@ import { Plus } from 'lucide-react'
 import { uid } from 'uid'
 
 export const TodoOverview = () => {
-  const [todos, setTodos] = useState<Todo[]>([])
+  // keep todos in local storage
+  const [todos, setTodos] = useState<Todo[]>(localStorage.todos ? JSON.parse(localStorage.todos) : [],)
   const [newTodo, setNewTodo] = useState<Todo>({
     task: '',
     category: 'choose',
     isCompleted: false,
   })
 
+  useEffect(() => {
+    localStorage.todos = JSON.stringify(todos)
+  }, [todos])
+
+
+  
   const addNewTodo = (event: React.FormEvent<HTMLFormElement>) => {
     if (newTodo.task === '' || newTodo.category === 'choose') return
 
@@ -32,7 +39,7 @@ export const TodoOverview = () => {
 
   return (
     <div className="flex flex-col min-h-screen mx-auto max-w-2xl p-6">
-      <AppHeader todoCount={todos.length} />
+      <AppHeader  todoCount={todos.length} />
       <div className="flex-1">
         <form
           className="mb-8 flex w-full items-center gap-4"
