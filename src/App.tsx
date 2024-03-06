@@ -1,17 +1,13 @@
-import 
+import { RouterProvider } from 'react-router-dom'
+import router from './bootstrap/router.tsx'
 
 function App() {
- 
-
   return (
     <>
-      <AppHeader />
+      {/* <TodoOverview/> */}
 
-      <h1>TODO</h1>
-      
-      
-      <AppFooter />
-      </>
+      <RouterProvider router={router} />
+    </>
   )
 }
 
