@@ -32,7 +32,7 @@ export const TodoOverview = () => {
 
   return (
     <div className="flex flex-col min-h-screen mx-auto max-w-2xl p-6">
-      <AppHeader todoCount={todos.length} />
+      <AppHeader  todoCount={todos.length} />
       <div className="flex-1">
         <form
           className="mb-8 flex w-full items-center gap-4"
