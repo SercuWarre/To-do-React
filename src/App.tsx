@@ -1,14 +1,8 @@
-import { RouterProvider } from 'react-router-dom'
-import router from './bootstrap/router.tsx'
+import { TodoOverview } from './screens/TodoOverview'
 
-function App() {
-  return (
-    <>
-      {/* <TodoOverview/> */}
-
-      <RouterProvider router={router} />
-    </>
-  )
+const App = () => {
+  return <TodoOverview />
 }
 
 export default App
+  

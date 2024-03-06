@@ -1,36 +1,23 @@
-import {
-  createBrowserRouter,
-  
-} from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom'
 
-import {TodoOverview} from "../screens/TodoOverview";
-import {TodoSettings} from "../screens/TodoSettings";
-
-// todo add the react router to the app
-//export the router to be used in the app
-
-//create a route for the home page
-//create a route for the settings page
+import { TodoOverview } from '../screens/TodoOverview'
+import { TodoSettings } from '../screens/TodoSettings'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <TodoOverview />,
   },
   {
-    path: "/settings",
-    element: <TodoSettings/>,
+    path: '/settings',
+    element: <TodoSettings />,
   },
+  // TODO: Add a 404 page
   {
-    path: "*",
+    path: '*',
     element: <div>404</div>,
-  }
+  },
+])
 
-]);
-
-export default router;
-
-
-
-
-
+// Export the router to be used in the app
+export default router

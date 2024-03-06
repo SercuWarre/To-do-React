@@ -1,20 +1,28 @@
-// Hello, warre!
+export const AppHeader = ({
+  title,
+  todoCount,
+}: {
+  title: string
+  todoCount?: number
+}) => {
+  const welcomeMessage = () => {
+    if (todoCount === undefined || todoCount === null) return null
+    if (todoCount === 1)
+      return <p className="text-neutral-500">You have 1 todo left.</p>
 
+    return (
+      <p className="text-neutral-500 dark:text-white">
+        You have <span className="font-bold">{todoCount} todos</span> left.
+      </p>
+    )
+  }
 
-// There are {count} todo(s) left to do.
-export const AppHeader = (props: { todoCount: number }) => (
-
-
-
-
-
-  <header className="mb-6 py-12">
-    <h1 className="text-4xl font-bold tracking-wide dark:text-red">
-      Hello Warre
-    </h1>
-    <p className="text-lg text-neutral-500">
-      There are <span className="font-bold">{props.todoCount} todo(s)</span> left to
-      do.
-    </p>
-  </header>
-)
+  return (
+    <header className="mb-3 pt-12 pb-6">
+      <h1 className="text-4xl font-bold text-neutral-800 dark:text-white">
+        {title}
+      </h1>
+      {welcomeMessage()}
+    </header>
+  )
+}
