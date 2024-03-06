@@ -6,7 +6,7 @@ export const AppHeader = ({
   todoCount?: number
 }) => {
   const welcomeMessage = () => {
-    if (todoCount === undefined || todoCount === null) return null
+    if (todoCount === undefined || todoCount === null || todoCount===0) return null
     if (todoCount === 1)
       return <p className="text-neutral-500">You have 1 todo left.</p>
 

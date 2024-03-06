@@ -5,11 +5,10 @@ import { ChevronDown, Plus } from 'lucide-react'
 import { Todo } from '../Models/Todo'
 
 const TodoInput = ({
-    addToParentState,
-}:{ addToParentState:(todo:Todo) => void  }) => {
-    
-
-
+  addToParentState,
+}: {
+  addToParentState: (todo: Todo) => void
+}) => {
   const emptyTodo: Todo = {
     task: '',
     category: 'choose',
@@ -44,7 +43,7 @@ const TodoInput = ({
 
   return (
     <form
-      className="flex gap-6 bg-white shadow py-3 px-6 rounded-2xl mb-6"
+      className="flex gap-6 bg-white shadow py-3 px-6 rounded-2xl mb-6 dark:bg-gray-800"
       onSubmit={addNewTodo}
     >
       <div className="flex items-center">
@@ -52,16 +51,16 @@ const TodoInput = ({
           className="h-auto rounded-full p-2 border border-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:border-transparent hover:text-white hover:bg-blue-500 disabled:opacity-10 disabled:cursor-not-allowed"
           disabled={!isValid.task.valid || !isValid.category.valid}
         >
-          <Plus className="stroke-current" />
+          <Plus className="stroke-current stroke-4 dark:stroke-white" />
           <span className="sr-only">Add todo</span>
         </button>
       </div>
 
       <div className="w-full">
         <input
-          className={`block w-full border border-neutral-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-1 text-lg ${
+          className={`block w-full border border-neutral-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-1 text-lg dark:bg-gray-800  dark:text-white${
             !isValid.task.valid && isValid.task.dirty
-              ? 'border-red-500 placeholder:text-red-300 focus:ring-red-700'
+              ? 'border-red-500 placeholder:text-red-300 focus:ring-red-700 '
               : ''
           }`}
           placeholder="Add a new todo..."
@@ -91,7 +90,7 @@ const TodoInput = ({
         />
         <div className="flex justify-between items-center relative w-fit">
           <select
-            className={`appearance-none w-full py-1 px-3 text-sm border pr-7 border-neutral-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-semibold placeholder:text-neutral-400 ${
+            className={`appearance-none w-full py-1 px-3 text-sm border pr-7 border-neutral-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-semibold placeholder:text-neutral-400 dark:bg-gray-800 dark:text-white ${
               !isValid.category.valid && isValid.category.dirty
                 ? 'border-red-500 placeholder:text-red-500 text-red-500 focus:ring-red-700'
                 : ''

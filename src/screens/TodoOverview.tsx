@@ -45,7 +45,7 @@ export const TodoOverview = () => {
           todoCount={todos.filter((t: Todo) => !t.isCompleted).length}
         />
         <Link
-          className="border border-neutral-200 bg-neutral-100 rounded-full p-2 text-neutral-400"
+          className="border border-neutral-200 bg-neutral-100 rounded-full p-2 text-neutral-400 dark:bg-gray-800"
           to="/settings"
         >
           <Settings />
